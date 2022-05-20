@@ -6,8 +6,8 @@ from flask import Flask, request, jsonify
 from recognition.middleware import ModelManager
 
 app = Flask(__name__)
-model_path = "recognition/model.h5"
-images_folder = "client_images/"
+model_path = "storage/model.h5"
+images_folder = "storage/client_images/"
 
 
 def format_datetime(dt):

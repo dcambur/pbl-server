@@ -1,3 +1,6 @@
 kind: pipeline
 name: pbl-server
 type: docker
+
+steps:
+  - name: prepare

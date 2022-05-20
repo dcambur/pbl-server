@@ -3,4 +3,16 @@ name: pbl-server
 type: docker
 
 steps:
-  - name: prepare
+- name: deploy
+  image: dokku/ci-docker-image
+  environment:
+    SSH_PRIVATE_KEY:
+      from_secret: DOKKU_DEPLOY_KEY
+    GIT_REMOTE_URL:
+      from_secret: DOKKU_DEPLOY_URL
+  commands:
+    - dokku-deploy 
+
+trigger:
+  branch:
+  - master
